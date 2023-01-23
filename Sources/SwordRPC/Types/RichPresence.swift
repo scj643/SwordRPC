@@ -8,13 +8,14 @@
 
 import Foundation
 
-public struct Button: Encodable {
+public struct RPButton: Encodable {
   public var label: String
   public var url: String
-}
-
-public struct Buttons: Encodable {
-  public var buttons: [Button]
+    
+    public init(label: String, url: String) {
+        self.label = label
+        self.url = url
+    }
 }
 
 public struct RichPresence: Encodable {
@@ -22,10 +23,9 @@ public struct RichPresence: Encodable {
   public var details: String?
   public var instance = true
   public var party = Party()
-  public var secrets = Secrets()
   public var state: String?
   public var timestamps = Timestamps()
-  public var buttons = Buttons()
+  public var buttons: [RPButton?]?
   
   public init() {}
 }
@@ -70,11 +70,5 @@ extension RichPresence {
       
       try container.encode([size, max], forKey: .size)
     }
-  }
-  
-  public struct Secrets: Encodable {
-    public var join: String? = nil
-    public var match: String? = nil
-    public var spectate: String? = nil
   }
 }
