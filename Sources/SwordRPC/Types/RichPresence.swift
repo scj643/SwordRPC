@@ -24,7 +24,7 @@ public struct RichPresence: Encodable {
   public var secrets = Secrets()
   public var state: String?
   public var timestamps = Timestamps()
-  public var buttons = Buttons()
+  public var buttons = Buttons(buttons: [Buttons.Button])
   
   public init() {}
 }
