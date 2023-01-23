@@ -8,6 +8,11 @@
 
 import Foundation
 
+public struct Button: Encodable {
+    public var label: String
+    public var url: String
+}
+
 public struct RichPresence: Encodable {
   public var assets = Assets()
   public var details: String?
@@ -16,6 +21,7 @@ public struct RichPresence: Encodable {
   public var secrets = Secrets()
   public var state: String?
   public var timestamps = Timestamps()
+  public var buttons = [Button]
   
   public init() {}
 }
