@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Button {
+struct Button: Encodable {
   public var label: String
   public var url: String
 }
