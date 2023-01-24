@@ -54,7 +54,7 @@ public class SwordRPC {
 
     self.createSocket()
 
-    if (!self.autoRegister) {
+    if (self.autoRegister) {
       self.registerUrl()
     }
   }
