@@ -37,7 +37,7 @@ public class SwordRPC {
   public init(
     appId: String,
     handlerInterval: Int = 1000,
-    autoRegister: Bool = true,
+    autoRegister: Bool = false,
     steamId: String? = nil
   ) {
     self.appId = appId
@@ -54,7 +54,9 @@ public class SwordRPC {
 
     self.createSocket()
 
-    self.registerUrl()
+    if (!self.autoRegister) {
+      self.registerUrl()
+    }
   }
 
   public func connect() -> Bool {
