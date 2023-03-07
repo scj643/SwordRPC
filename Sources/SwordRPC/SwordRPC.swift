@@ -53,10 +53,6 @@ public class SwordRPC {
     self.encoder.dateEncodingStrategy = .secondsSince1970
 
     self.createSocket()
-
-    if (self.autoRegister) {
-      self.registerUrl()
-    }
   }
 
   public func connect() -> Bool {
